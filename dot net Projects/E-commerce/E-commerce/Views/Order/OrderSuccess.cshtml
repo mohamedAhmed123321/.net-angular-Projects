@@ -1,0 +1,76 @@
+﻿@model ShoppingCartModel
+    <!-- thank-you section start -->
+    <section class="section-b-space light-layout">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="success-text">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        <h2>thank you</h2>
+                        <p>Payment is successfully processsed and your order is on the way</p>
+                        <p>Transaction ID:267676GHERT105467</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section ends -->
+    <!-- order-detail section start -->
+    <section class="section-b-space">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="product-order">
+                        <h3>your order details</h3>
+                    @foreach(var item in Model.lstItems)
+                    {
+                        <div class="row product-order-detail">
+                            <div class="col-3">
+                                <img src="~/Website/assets/images/pro3/1.jpg" alt=""
+                                     class="img-fluid blur-up lazyload">
+                            </div>
+                            <div class="col-3 order_detail">
+                                <div>
+                                    <h4>product name</h4>
+                                    <h5>@item.ItemName</h5>
+                                </div>
+                            </div>
+                            <div class="col-3 order_detail">
+                                <div>
+                                    <h4>quantity</h4>
+                                    <h5>@item.Qty</h5>
+                                </div>
+                            </div>
+                            <div class="col-3 order_detail">
+                                <div>
+                                    <h4>price</h4>
+                                    <h5>$@item.Price</h5>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                        <div style="margin-top:5px;padding-top:20px;border-top:1px solid black" class="final-total">
+                            <h3>total <span>$@Model.Total</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section ends -->
+    @section Scripts{
+    <script>
+       let firstOne=0;
+    window.onload = function() {
+        // Check if the page was loaded before using sessionStorage
+        if (firstOne==1) {
+            // If the page has been loaded before (on refresh), redirect to another link
+            window.location.href = "/Home/Index"; // Replace with your desired URL
+        } else {
+         firstOne++;
+        }
+    };
+</script>
+    }

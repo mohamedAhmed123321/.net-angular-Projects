@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "p/AKEe20WsBBOM6ON0bDhxwEbRdSYh7gOzdJ/jRwmB/X8yQSU8Wbg3Z7CPmpHJsOhHv7KmZ2hWF5s1WvHj+XtA==",
+  "success": true,
+  "projectFilePath": "D:\\programs\\Samples\\SchedualProcessOs\\SchedualProcessOs\\SchedualProcessOs.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ws\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

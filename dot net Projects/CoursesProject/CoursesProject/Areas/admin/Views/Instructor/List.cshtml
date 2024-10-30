@@ -1,0 +1,115 @@
+﻿<!-- partial -->
+@model List<TbInstructor>
+<div class="container-fluid page-body-wrapper">
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h1 id="HiddenBag" type="hidden">@ViewBag.Message </h1>
+                    <div class="row">
+                        <div class="col-12">
+                            <a style="font-size:20px" asp-controller="Instructor" asp-action="Edit" class="btn btn-gradient-danger btn-fw">+</a>
+                            <table id="order-listing" class="table">
+                                <thead>
+                                    
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        @foreach (var colums in Model)
+                                        {
+                                            <tr>
+                                                <td> @colums.InstructorName</td>
+                                                <td>
+                                                    <a asp-controller="Instructor" asp-action="Edit" asp-route-id="@colums.InstructorId" class="btn btn-info"><i class="mdi mdi-pencil"></i></a>
+                                                    <a onclick="deleteElement('@colums.InstructorId')" class="btn btn-danger"><i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+
+    </div>
+    <!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+@section styls {
+    <link rel="stylesheet" href="~/Admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+}
+@section Scripts {
+    <script src="~/Admin/assets/js/data-table.js"></script>
+    <script src="~/Admin/assets/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="~/Admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    @if (!string.IsNullOrEmpty(ViewBag.Success))
+    {
+        <script>
+            // Display a SweetAlert popup
+            Swal.fire({
+                icon: 'success',
+                title: '@ViewBag.Success',
+                showConfirmButton: true // Show a confirm button
+            }).then((result) => {
+            @{
+                ViewBag.Success = ""; // Assigning ViewBag.Success in Razor code
+            }
+                    location.reload();
+
+            });
+        </script>
+    }
+    @if (!string.IsNullOrEmpty(ViewBag.Failed))
+    {
+        <script>
+            // Display a SweetAlert popup
+            Swal.fire({
+                icon: 'error',
+                title: '@ViewBag.Failed',
+                showConfirmButton: true // Show a confirm button
+            }).then((result) => {
+        @{
+                ViewBag.Failed = ""; // Assigning ViewBag.Success in Razor code
+        }
+                    location.reload();
+
+            });
+        </script>
+    }
+    <script>
+        // Function to handle deletion
+
+        function deleteElement(id) {
+            // Show SweetAlert confirmation dialog
+            Swal.fire({
+                icon: 'warning',
+                title: 'Are you sure?',
+                showCancelButton: true,
+                confirmButtonText: ' delete',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // User confirmed deletion, construct the URL with the ID
+                    let url = '/admin/Instructor/Delete?id=' + id;
+
+                    // Redirect the user to the URL
+                    window.location.href = url;
+                }
+            });
+        }
+    </script>
+}

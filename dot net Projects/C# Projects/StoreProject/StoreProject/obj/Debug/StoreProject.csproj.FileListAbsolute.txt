@@ -1,0 +1,10 @@
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreProject\bin\Debug\StoreProject.exe.config
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreProject\bin\Debug\StoreProject.exe
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreProject\bin\Debug\StoreProject.pdb
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreProject\obj\Debug\StoreProject.csprojAssemblyReference.cache
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreProject\obj\Debug\StoreProject.csproj.CoreCompileInputs.cache
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreProject\obj\Debug\StoreProject.exe
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreProject\obj\Debug\StoreProject.pdb
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreProject\bin\Debug\StoreBl.dll
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreProject\bin\Debug\StoreBl.pdb
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreProject\obj\Debug\StoreProject.csproj.CopyComplete

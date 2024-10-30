@@ -1,0 +1,47 @@
+﻿<!-- partial -->
+@using Microsoft.AspNetCore.Identity
+@model List<IdentityRole>
+<div class="container-fluid page-body-wrapper">
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+
+
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <table id="order-listing" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>  @ResWebSite.lblName</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        @foreach (var USerGoups in Model)
+                                        {
+                                            <tr>
+                                                <td>@USerGoups.Name</td>
+    
+                                            </tr>
+                                        }
+                                    }
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+
+    </div>
+    <!-- main-panel ends -->
+</div>

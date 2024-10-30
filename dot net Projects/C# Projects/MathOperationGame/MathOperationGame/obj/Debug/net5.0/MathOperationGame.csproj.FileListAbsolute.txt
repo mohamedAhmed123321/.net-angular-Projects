@@ -1,0 +1,23 @@
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\bin\Debug\net5.0\MathOperationGame.exe
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\bin\Debug\net5.0\MathOperationGame.deps.json
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\bin\Debug\net5.0\MathOperationGame.runtimeconfig.json
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\bin\Debug\net5.0\MathOperationGame.runtimeconfig.dev.json
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\bin\Debug\net5.0\MathOperationGame.dll
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\bin\Debug\net5.0\ref\MathOperationGame.dll
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\bin\Debug\net5.0\MathOperationGame.pdb
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.csproj.AssemblyReference.cache
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.GeneratedMSBuildEditorConfig.editorconfig
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.AssemblyInfoInputs.cache
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.AssemblyInfo.cs
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.csproj.CoreCompileInputs.cache
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.dll
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\ref\MathOperationGame.dll
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.pdb
+E:\Current Courses\C#\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.genruntimeconfig.cache
+D:\programs\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.csproj.AssemblyReference.cache
+D:\programs\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.GeneratedMSBuildEditorConfig.editorconfig
+D:\programs\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.AssemblyInfoInputs.cache
+D:\programs\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.AssemblyInfo.cs
+D:\programs\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.csproj.CoreCompileInputs.cache
+D:\programs\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.dll
+D:\programs\Samples\MathOperationGame\MathOperationGame\obj\Debug\net5.0\MathOperationGame.pdb

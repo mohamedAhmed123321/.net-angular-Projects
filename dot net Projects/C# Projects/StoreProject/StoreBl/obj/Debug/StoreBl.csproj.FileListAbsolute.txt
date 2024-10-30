@@ -1,0 +1,12 @@
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreBl\bin\Debug\StoreBl.dll
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreBl\bin\Debug\StoreBl.pdb
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreBl\obj\Debug\StoreBl.csprojAssemblyReference.cache
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreBl\obj\Debug\StoreBl.csproj.CoreCompileInputs.cache
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreBl\obj\Debug\StoreBl.dll
+F:\Current Courses\Xamarin V8\Samples\StoreProject\StoreBl\obj\Debug\StoreBl.pdb
+F:\Current Courses\C#\Samples\StoreProject\StoreBl\bin\Debug\StoreBl.dll
+F:\Current Courses\C#\Samples\StoreProject\StoreBl\bin\Debug\StoreBl.pdb
+F:\Current Courses\C#\Samples\StoreProject\StoreBl\obj\Debug\StoreBl.csproj.AssemblyReference.cache
+F:\Current Courses\C#\Samples\StoreProject\StoreBl\obj\Debug\StoreBl.csproj.CoreCompileInputs.cache
+F:\Current Courses\C#\Samples\StoreProject\StoreBl\obj\Debug\StoreBl.dll
+F:\Current Courses\C#\Samples\StoreProject\StoreBl\obj\Debug\StoreBl.pdb

@@ -1,0 +1,198 @@
+<app-header></app-header>
+
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="page-title">
+          <h2>Check-out</h2>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <nav aria-label="breadcrumb" class="theme-breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Check-out
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- breadcrumb End -->
+
+<!-- section start -->
+<section class="section-b-space">
+  <div class="container">
+    <div class="checkout-page">
+      <div class="checkout-form">
+        <form [formGroup]="billingForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+              <div class="checkout-title">
+                <h3>Billing Details</h3>
+              </div>
+              <div class="row check-out">
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <div class="field-label">First Name</div>
+                  <input
+                    formControlName="firstName"
+                    type="text"
+                    name="field-name"
+                    placeholder=""
+                  />
+                  <span
+                    class="spanError"
+                    *ngIf="
+                      billingForm.controls['firstName'].invalid &&
+                      billingForm.controls['firstName'].touched
+                    "
+                    >First Name is required</span
+                  >
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <div class="field-label">Last Name</div>
+                  <input
+                    type="text"
+                    formControlName="lastName"
+                    placeholder=""
+                  />
+                  <span
+                    class="spanError"
+                    *ngIf="
+                      billingForm.controls['lastName'].invalid &&
+                      billingForm.controls['lastName'].touched
+                    "
+                    >Last Name is required</span
+                  >
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <div class="field-label">Phone</div>
+                  <input formControlName="phone" type="text" placeholder="" />
+                  <div
+                    *ngIf="
+                      billingForm.get('phone')?.touched &&
+                      billingForm.get('phone')?.invalid
+                    "
+                  >
+                    <small
+                      class="spanError"
+                      *ngIf="billingForm.get('phone')?.hasError('required')"
+                    >
+                      phone is required.
+                    </small>
+                    <small
+                      class="spanError"
+                      *ngIf="billingForm.get('phone')?.hasError('pattern')"
+                    >
+                      Enter a valid phone.
+                    </small>
+                  </div>
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <div class="field-label">Email Address</div>
+                  <input
+                    formControlName="email"
+                    type="text"
+                    name="field-name"
+                    placeholder=""
+                  />
+                  <div
+                    *ngIf="
+                      billingForm.get('email')?.touched &&
+                      billingForm.get('email')?.invalid
+                    "
+                  >
+                    <small
+                      class="spanError"
+                      *ngIf="billingForm.get('email')?.hasError('required')"
+                    >
+                      Email is required.
+                    </small>
+                    <small
+                      class="spanError"
+                      *ngIf="billingForm.get('email')?.hasError('pattern')"
+                    >
+                      Enter a valid email.
+                    </small>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                  <div class="field-label">Address</div>
+                  <input
+                    type="text"
+                    formControlName="adress"
+                    name="field-name"
+                    placeholder="Street address"
+                  />
+                  <span
+                    class="spanError"
+                    *ngIf="
+                      billingForm.controls['adress'].invalid &&
+                      billingForm.controls['adress'].touched
+                    "
+                    >adress is required</span
+                  >
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                  <div class="field-label">Town/City</div>
+                  <input type="text" formControlName="city" placeholder="" />
+                  <span
+                    class="spanError"
+                    *ngIf="
+                      billingForm.controls['city'].invalid &&
+                      billingForm.controls['city'].touched
+                    "
+                    >city is required</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+              <div class="checkout-details">
+                <div class="order-box">
+                  <div class="title-box">
+                    <div>Product <span>Total</span></div>
+                  </div>
+                  <ul class="qty">
+                    <li *ngFor="let item of cart.Items">
+                      {{ item.ItemName }} × {{ item.Qty }}
+                      <span>${{ item.SalesPrice }}</span>
+                    </li>
+                  </ul>
+
+                  <ul class="total">
+                    <li>
+                      Total <span class="count">${{ cart.Total }}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="payment-box">
+                  <button
+                    title="Complete your information to be able to pay"
+                    style="
+                      display: block;
+                      width: 100%;
+                      border: none;
+                      background-color: white;
+                    "
+                    [disabled]="billingForm.invalid"
+                  >
+                    <div id="paypal-button-container"></div>
+                  </button>
+                </div>
+                <div class="text-right"></div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- section end -->
+<app-footer></app-footer>

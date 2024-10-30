@@ -1,0 +1,135 @@
+<!-- header start -->
+<header class="header-tools">
+  <div class="mobile-fix-option"></div>
+  <div class="top-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="header-contact">
+            <ul>
+              <li>Welcome to Our store Multikart</li>
+              <li>
+                <i class="fa fa-phone" aria-hidden="true"></i>Call Us:
+                01008227103
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 text-right">
+          <ul class="header-dropdown">
+            <li class="mobile-wishlist">
+              <a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="logo-menu-part">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="main-menu">
+            <div class="menu-left">
+              <div class="navbar">
+                <a href="javascript:void(0)" onclick="openNav()">
+                  <div class="bar-style">
+                    <i class="fa fa-bars sidebar-bar" aria-hidden="true"></i>
+                  </div>
+                </a>
+                <div id="mySidenav" class="sidenav">
+                  <a
+                    href="javascript:void(0)"
+                    class="sidebar-overlay"
+                    onclick="closeNav()"
+                  ></a>
+                  <nav>
+                    <div class="toggle-nav">
+                      <i class="fa fa-bars sidebar-bar"></i>
+                    </div>
+                    <!-- Horizontal menu -->
+                    <ul class="sm pixelstrap sm-horizontal">
+                      <li>
+                        <div class="mobile-back text-right">
+                          Back<i
+                            class="fa fa-angle-right pl-2"
+                            aria-hidden="true"
+                          ></i>
+                        </div>
+                      </li>
+                      <li>
+                        <a routerLink="/home">Home</a>
+                        <a routerLink="/myOrders">my orders</a>
+                        <a routerLink="/item">shop</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="brand-logo">
+                <a href="index.html">
+                  <img
+                    src="../../../assets/images/icon/logo.png"
+                    class="img-fluid blur-up lazyload"
+                    alt=""
+                /></a>
+              </div>
+            </div>
+            <div class="menu-right pull-right">
+              <div>
+                <nav id="main-nav">
+                  <div class="toggle-nav">
+                    <i class="fa fa-bars sidebar-bar"></i>
+                  </div>
+                  <!-- Horizontal menu -->
+                  <ul id="main-menu" class="sm pixelstrap sm-horizontal">
+                    <li>
+                      <div class="mobile-back text-right">
+                        Back<i
+                          class="fa fa-angle-right pl-2"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                    </li>
+                    <li>
+                      <a routerLink="/home">Home</a>
+                    </li>
+                    <li>
+                      <a routerLink="/books">shop</a>
+                    </li>
+                    <li>
+                      <a routerLink="/myOrders">My Orders</a>
+                    </li>
+                    <li>
+                      <a style="cursor: pointer" (click)="LogOut()">log out</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div>
+                <div class="icon-nav">
+                  <ul>
+                    <li class="onhover-div mobile-cart">
+                      <div href="javascript:void(0)" onclick="openCart()">
+                        <a routerLink="/cart">
+                          <img
+                            src="../../../assets/images/icon/cart.png"
+                            class="img-fluid blur-up lazyload"
+                            alt=""
+                          />
+                        </a>
+
+                        <i class="ti-shopping-cart"></i>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- header end -->

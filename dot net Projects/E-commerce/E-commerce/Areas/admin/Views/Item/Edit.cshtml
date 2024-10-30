@@ -1,0 +1,246 @@
+﻿@model TbItem
+<div class="content-wrapper">
+    <div class="page-header">
+    </div>
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form class="forms-sample" method="post" enctype="multipart/form-data"
+                          id="descriptionForm" asp-controller="Item" asp-action="Edit" role="form">
+
+                        <input type="hidden" asp-for="ItemId" />
+                        <input type="hidden" asp-for="CreatedBy" />
+                        <input type="hidden" asp-for="CurrentState" />
+                        <input type="hidden" asp-for="CreatedDate" />
+                        <input type="hidden" asp-for="UpdatedBy" />
+                        <input type="hidden" asp-for="UpdatedDate" />
+
+                        <input id="HiddenInputImage" type="hidden" asp-for="ImageName" />
+
+                        <div style="display:flex;flex-wrap:wrap;justify-content: flex-start;column-gap: 110px;padding:0 25px;">
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblName</label>
+                                <input asp-for="ItemName" type="text" class="form-control" placeholder="@ResWebSite.lblName">
+                                <span style="color:crimson" asp-validation-for="ItemName"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblSalesPrice</label>
+                                <input asp-for="SalesPrice" type="text" class="form-control" placeholder="@ResWebSite.lblSalesPrice">
+                                <span style="color:crimson" asp-validation-for="SalesPrice"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblPurchasePrice</label>
+                                <input asp-for="PurchasePrice" type="text" class="form-control" placeholder="@ResWebSite.lblPurchasePrice">
+                                <span style="color:crimson" asp-validation-for="PurchasePrice"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblDescription</label>
+                                <input asp-for="Description" type="text" class="form-control" placeholder="@ResWebSite.lblDescription">
+                                <span style="color:crimson" asp-validation-for="Description"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblGpu</label>
+                                <input asp-for="Gpu" type="text" class="form-control" placeholder="@ResWebSite.lblGpu">
+                                <span style="color:crimson" asp-validation-for="Gpu"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblHardDisk</label>
+                                <input asp-for="HardDisk" type="text" class="form-control" placeholder="@ResWebSite.lblHardDisk">
+                                <span style="color:crimson" asp-validation-for="HardDisk"></span>
+                            </div>
+
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1">@ResWebSite.lblItemType</label>
+                                <select style="height:40px" class="form-control" asp-for="ItemTypeId" asp-items="@(new SelectList(ViewBag.itemtype,"ItemTypeId","ItemTypeName"))">
+                                    <option></option>
+                                </select>
+                                <span asp-validation-for="ItemTypeId"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label class="arrow right" for="exampleInputUsername1">@ResWebSite.lblOs</label>
+                                <select style="height:40px" class="form-control" asp-for="OsId" asp-items="@(new SelectList(ViewBag.itemOs,"OsId","OsName"))">
+                                    <option></option>
+                                </select>
+                                <span asp-validation-for="OsId"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label class="arrow right" for="exampleInputUsername1">@ResWebSite.lblCategory</label>
+                                <select style="height:40px" class="form-control" asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.category,"CategoryId","CategoryName"))">
+                                    <option></option>
+                                </select>
+                                <span asp-validation-for="CategoryId"></span>
+                            </div>
+                            
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label class="arrow right" for="exampleInputUsername1">@ResWebSite.lblProcessor</label>
+                                <input asp-for="Processor" type="text" class="form-control" placeholder="@ResWebSite.lblProcessor">
+                                <span style="color:crimson" asp-validation-for="Processor"></span>
+                            </div>
+
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblRamSize</label>
+                                <input asp-for="RamSize" type="text" class="form-control" placeholder="@ResWebSite.lblRamSize">
+                                <span style="color:crimson" asp-validation-for="RamSize"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblScreenReslution</label>
+                                <input asp-for="ScreenReslution" type="text" class="form-control" placeholder="@ResWebSite.lblScreenReslution">
+                                <span style="color:crimson" asp-validation-for="ScreenReslution"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblScreenSize</label>
+                                <input asp-for="ScreenSize" type="text" class="form-control" placeholder="@ResWebSite.lblScreenSize">
+                                <span style="color:crimson" asp-validation-for="ScreenSize"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 77%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblWeight</label>
+                                <input asp-for="Weight" type="text" class="form-control" placeholder="@ResWebSite.lblWeight">
+                                <span style="color:crimson" asp-validation-for="Weight"></span>
+                            </div>
+
+
+                    </div>
+
+
+                        <div class="form-group">
+                            <label class="custom-file-label" style="color:yellow;background-color:black;font-size:larger" for="exampleInputUsername1">
+                                @ResWebSite.lblImage
+                            </label>
+                            <input id="Files" name="Filesss" type="hidden" />
+                            <input id="fileInput" type="file" name="Files" multiple class="file-upload-default" placeholder="@ResWebSite.lblImage"
+                                   accept="image/*">
+                            <div class="input-group col-xs-12">
+                                <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
+                                <span class="input-group-append">
+                                    <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-body col-md-12">
+                            <div id="gallery" class="row lightGallery">
+                                <!-- Images will be dynamically added here -->
+                                <table class="table table-striped table-bordered table-hover projects m-0" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <td style="width:40%">
+                                                @ResWebSite.lblImage
+                                            </td>
+                                            <td style="width:40%">
+                                                @ResWebSite.lblDefualt
+                                            </td>
+                                            <td style="width:40%">
+                                                @ResWebSite.lblActions
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="images-table-body">
+                                        @if (!string.IsNullOrEmpty(Model.ImageName))
+                                        {
+
+                                            <tr>
+                                                <td><img id="myImage" src="~/Uploads/Item/@Model.ImageName" class="img-table"  style="width: 70px; height: 75px;"></td>
+                                                <td><div class="form-check"><input type="hidden" id="HiddenImgId" value=""><label class="form-check-label"><input onchange="MyForm.handleCheckboxChange(this);" type="checkbox" class="checkbox" checked><i class="input-helper"></i></label></div></td>
+                                                <td><button onclick="MyForm.removeImage(this.parentNode.parentNode)" class="btn btn-gradient-danger btn-sm" data-widget="remove" data-toggle="tooltip" type="button" title="Remove"><i class="fa fa-trash"></i></button></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <input type="hidden" id="myStringImages" name="myStringImages" value="">
+                        <button  type="submit" formmethod="post" class="btn btn-gradient-primary me-2 col-md-2 ">@ResWebSite.lblSave</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section styls {
+    <style>
+        .arrow {
+            position: relative;
+            line-height:1.5!important;
+        } 
+
+            .arrow.right::before {
+                content: '';
+                position: absolute;
+                height: 0;
+                width: 0;
+                border-color: transparent transparent transparent #eee;
+                border-width: 10px;
+                border-style: solid;
+                right: -23px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+    </style>
+}
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    @if (!string.IsNullOrEmpty(ViewBag.Failed))
+    {
+        <script>
+            // Display a SweetAlert popup
+            Swal.fire({
+                icon: 'error',
+                title: '@ViewBag.Failed',
+                showConfirmButton: true // Show a confirm button
+            }).then((result) => {
+            @{
+                ViewBag.Failed = ""; // Assigning ViewBag.Success in Razor code
+            }
+                                    });
+        </script>
+    }
+
+    <script src="~/modules/item/adminitem.js"></script>
+    <script src="~/modules/item/adminitemcontent.js"></script>
+    <script src="~/Admin/assets/js/file-upload.js"></script>
+    <script>
+        MyForm.init();
+        const img = document.getElementById('myImage');
+
+        // Attach the event listener to the image
+        if (img) {
+            img.addEventListener('click', (function (src) {
+                return function () {
+                    // Call your function and pass the src of the image
+                    MyForm.displayMediaInModal(src, 'image');
+                };
+            })(img.src));
+        }
+    </script>
+    @if (ViewBag.images!=null)
+    {
+            <script>
+  
+            let images = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.images));
+
+            console.log(images);  
+
+       
+            MyForm.DrawImages(images);
+
+        </script>
+    }
+}

@@ -1,0 +1,233 @@
+﻿@model TbSetting
+<div class="content-wrapper">
+    <div class="page-header">
+    </div>
+    <div class="row">
+        <div class="col-md-8 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form class="forms-sample" method="post" enctype="multipart/form-data"
+                          id="MyForm" asp-controller="Setting" asp-action="Edit" role="form">
+
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="CreatedBy" />
+                        <input type="hidden" asp-for="CurrentState" />
+                        <input type="hidden" asp-for="CreatedDate" />
+                        <input type="hidden" asp-for="UpdatedBy" />
+                        <input type="hidden" asp-for="UpdatedDate" />
+
+                        <input id="HiddenInputImage" type="hidden" asp-for="Logo" />
+
+                    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;padding:0 25px;" >
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 85%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">
+                                    @ResWebSite.lblLogo
+                                </label>
+
+                                <input id="imageUpload" type="file" name="Files"
+                                       class="form-control" placeholder="@ResWebSite.lblLogo"
+                                       onchange="handleImageChange(event)"
+                                       accept=".jpg, .jpeg, .png, .gif">
+                                <span style="color:crimson" asp-validation-for="Logo"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 85%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblAddress</label>
+                                <input asp-for="Address" type="text" class="form-control" placeholder="@ResWebSite.lblAddress">
+                                <span style="color:crimson" asp-validation-for="Address"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 85%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblPhone</label>
+                                <input asp-for="ContactNumber" type="text" class="form-control" placeholder="@ResWebSite.lblPhone">
+                                <span style="color:crimson" asp-validation-for="ContactNumber"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 85%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblFacebookLink</label>
+                                <input asp-for="FacebookLink" type="text" class="form-control" placeholder="@ResWebSite.lblFacebookLink">
+                                <span style="color:crimson" asp-validation-for="FacebookLink"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 85%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblInstgramLink</label>
+                                <input asp-for="InstgramLink" type="text" class="form-control" placeholder="@ResWebSite.lblInstgramLink">
+                                <span style="color:crimson" asp-validation-for="InstgramLink"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 85%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblLastPanner</label>
+                                <input asp-for="LastPanner" type="text" class="form-control" placeholder="@ResWebSite.lblLastPanner">
+                                <span style="color:crimson" asp-validation-for="LastPanner"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 85%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblMiddlePanner</label>
+                                <input asp-for="MiddlePanner" type="text" class="form-control" placeholder="@ResWebSite.lblMiddlePanner">
+                                <span style="color:crimson" asp-validation-for="MiddlePanner"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 85%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblTwitterLink</label>
+                                <input asp-for="TwitterLink" type="text" class="form-control" placeholder="@ResWebSite.lblTwitterLink">
+                                <span style="color:crimson" asp-validation-for="TwitterLink"></span>
+                            </div>
+
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 85%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblWebsiteDescription</label>
+                                <input asp-for="WebsiteDescription" type="text" class="form-control" placeholder="@ResWebSite.lblWebsiteDescription">
+                                <span style="color:crimson" asp-validation-for="WebsiteDescription"></span>
+                            </div>
+
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 85%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblWebsiteName</label>
+                                <input asp-for="WebsiteName" type="text" class="form-control" placeholder="@ResWebSite.lblWebsiteName">
+                                <span style="color:crimson" asp-validation-for="WebsiteName"></span>
+                            </div>
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 85%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">@ResWebSite.lblYoutubeLink</label>
+                                <input asp-for="YoutubeLink" type="text" class="form-control" placeholder="@ResWebSite.lblYoutubeLink">
+                                <span style="color:crimson" asp-validation-for="YoutubeLink"></span>
+                            </div>
+                    </div>
+
+                        <button  type="submit" formmethod="post" class="btn btn-gradient-primary me-2 col-md-2 ">@ResWebSite.lblSave</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div st class="col-md-4 grid-margin stretch-card">
+            <div style="width:50%" class="card">
+                <div class="card-body">
+                    <span id="tbImgName"></span>
+                    <div id="tbImgSrc">
+                        @if (string.IsNullOrEmpty(Model.Logo))
+                        {
+                            <img src="~/Admin/assets/images/samples/bootstrap-stack.png" style="width:95%; height300px;" />
+                        }
+                        else
+                        {
+                            <img src="~/Uploads/Setting/@Model.Logo" style="width:95%; height300px;" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section styls {
+    <style>
+        .arrow {
+            position: relative;
+            line-height:1.5!important;
+        } 
+
+            .arrow.right::before {
+                content: '';
+                position: absolute;
+                height: 0;
+                width: 0;
+                border-color: transparent transparent transparent #eee;
+                border-width: 10px;
+                border-style: solid;
+                right: -23px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+    </style>
+}
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    @if (!string.IsNullOrEmpty(ViewBag.Failed))
+    {
+        <script>
+            // Display a SweetAlert popup
+            Swal.fire({
+                icon: 'error',
+                title: '@ViewBag.Failed',
+                showConfirmButton: true // Show a confirm button
+            }).then((result) => {
+            @{
+                ViewBag.Failed = ""; // Assigning ViewBag.Success in Razor code
+            }
+                                    });
+        </script>
+    }
+    <script>
+        function handleImageChange(event) {
+            const file = event.target.files[0];
+
+            // Call the file extension validation function
+            if (!validateFileExtension(file)) {
+                document.getElementById("imageUpload").value = "";
+                return; // Return if the file extension is invalid
+            }
+            if (!validateFileSize(file)) {
+                document.getElementById("imageUpload").value = "";
+                return; // Return if the file size exceeds the limit
+            }
+            // Call the UploadDefaultImg function
+            UploadDefaultImg(file);
+        }
+        function validateFileExtension(file) {
+            var fileName = file.name;
+            var fileExtension = fileName.split('.').pop().toLowerCase();
+            var allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+
+            if (allowedExtensions.indexOf(fileExtension) === -1) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Extension',
+                    text: 'Only JPG, JPEG, PNG, and GIF files are allowed.',
+                    confirmButtonText: 'OK'
+                });
+                return false;
+            }
+            return true;
+        }
+        function validateFileSize(file) {
+            const maxSize = 10 * 1024 * 1024; // 10 MB limit
+            if (file.size > maxSize) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Size',
+                    text: 'Image size exceeds the maximum allowed size (10 MB).',
+                    confirmButtonText: 'OK'
+                });
+                return false;
+            }
+            return true;
+        }
+        function UploadDefaultImg(file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const imageData = {
+                    name: file.name,
+                    base64: reader.result.slice(reader.result.indexOf('base64,') + 7)
+                };
+
+                const imagePreviewHTML = getImagePreviewHTML(reader.result);
+
+                // Pass the file data and image preview HTML to the caller
+                handleImageUpload(imageData, imagePreviewHTML);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function getImagePreviewHTML(imageDataURL) {
+            return `<img class="thumbnail" src="${imageDataURL}" style="width: 95%; height: 300px; border-radius: 5px; border: 1px solid #d9d9d9; padding: 1px;" />`;
+        }
+
+        function handleImageUpload(imageData, imagePreviewHTML) {
+            // Example usage: Update DOM elements with image data and preview HTML
+            document.getElementById("tbImgSrc").innerHTML = imagePreviewHTML;
+            // Additional logic for handling the image data as needed
+        }
+    </script>
+}

@@ -1,0 +1,61 @@
+﻿@model ShoppingCartModel
+<!-- order-detail section start -->
+<section class="section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="product-order">
+                    @if (Model != null)
+                    {
+                        <h3 >your order details</h3>
+                    }
+                    else{
+                        <h3 style="text-align:center">you don't have orders</h3>
+
+                    }
+
+                    @if (Model != null)
+                    {
+                        @foreach (var item in Model.lstItems)
+                        {
+                            <div class="row product-order-detail">
+                                <div class="col-3">
+                                    <img src="~/Uploads/Item/@item.ImageName" alt=""
+                                         class="img-fluid blur-up lazyload">
+                                </div>
+                                <div class="col-3 order_detail">
+                                    <div>
+                                        <h4>product name</h4>
+                                        <h5>@item.ItemName</h5>
+                                    </div>
+                                </div>
+                                <div class="col-3 order_detail">
+                                    <div>
+                                        <h4>quantity</h4>
+                                        <h5>@item.Qty</h5>
+                                    </div>
+                                </div>
+                                <div class="col-3 order_detail">
+                                    <div>
+                                        <h4>price</h4>
+                                        <h5>$@item.Price</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+              
+
+
+                    <div style="margin-top:5px;padding-top:20px;border-top:1px solid black" class="final-total">
+                        @if (Model != null)
+                        {
+                            <h3>total <span>$@Model.Total</span></h3>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section ends -->

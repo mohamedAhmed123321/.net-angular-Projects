@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div>
+      <form>
+        <div style="width: 48%; float: left">
+          <div class="RowDiv">
+            <input id="txtInput" class="InputText" type="text" />
+            <input
+              value="Clear"
+              class="ClearButton"
+              type="button"
+              onclick="Calculator.ClearData()"
+            />
+          </div>
+          <div class="RowDiv">
+            <input
+              value="7"
+              class="CalCutton"
+              type="button"
+              onclick="Calculator.WriteText(this)"
+            />
+            <input
+              value="8"
+              class="CalCutton"
+              type="button"
+              onclick="Calculator.WriteText(this)"
+            />
+            <input
+              value="9"
+              class="CalCutton"
+              type="button"
+              onclick="Calculator.WriteText(this)"
+            />
+          </div>
+          <div class="RowDiv">
+            <input
+              value="4"
+              class="CalCutton"
+              type="button"
+              onclick="Calculator.WriteText(this)"
+            />
+            <input
+              value="5"
+              class="CalCutton"
+              type="button"
+              onclick="Calculator.WriteText(this)"
+            />
+            <input
+              value="6"
+              class="CalCutton"
+              type="button"
+              onclick="Calculator.WriteText(this)"
+            />
+          </div>
+          <div class="RowDiv">
+            <input
+              value="1"
+              class="CalCutton"
+              type="button"
+              onclick="Calculator.WriteText(this)"
+            />
+            <input
+              value="2"
+              class="CalCutton"
+              type="button"
+              onclick="Calculator.WriteText(this)"
+            />
+            <input
+              value="3"
+              class="CalCutton"
+              type="button"
+              onclick="Calculator.WriteText(this)"
+            />
+          </div>
+          <div class="RowDiv">
+            <input
+              value="+"
+              class="OperCutton"
+              type="button"
+              onclick="Calculator.OperatorClick('1')"
+            />
+            <input
+              value="-"
+              class="OperCutton"
+              type="button"
+              onclick="Calculator.OperatorClick('2')"
+            />
+            <input
+              value="*"
+              class="OperCutton"
+              type="button"
+              onclick="Calculator.OperatorClick('3')"
+            />
+            <input
+              value="/"
+              class="OperCutton"
+              type="button"
+              onclick="Calculator.OperatorClick('4')"
+            />
+          </div>
+          <div class="RowDiv">
+            <input
+              value="="
+              class="EqualCutton"
+              type="button"
+              onclick="Calculator.Calculation()"
+            />
+          </div>
+        </div>
+
+        <div style="width: 48%; float: left">
+          <ul id="DivValues">
+            <h1>results</h1>
+            <div class="results"></div>
+          </ul>
+        </div>
+      </form>
+    </div>
+    <script src="Index.js"></script>
+  </body>
+</html>

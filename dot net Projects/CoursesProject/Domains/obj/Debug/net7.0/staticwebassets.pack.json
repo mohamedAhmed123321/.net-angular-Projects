@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\programs\\MyProjects\\.net\\CoursesProject\\Domains\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Domains.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Domains.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\programs\\MyProjects\\.net\\CoursesProject\\Domains\\wwwroot\\background.png",
+      "PackagePath": "staticwebassets\\background.png"
+    },
+    {
+      "Id": "D:\\programs\\MyProjects\\.net\\CoursesProject\\Domains\\wwwroot\\exampleJsInterop.js",
+      "PackagePath": "staticwebassets\\exampleJsInterop.js"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Domains.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Domains.props",
+      "PackagePath": "build\\Domains.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Domains.props",
+      "PackagePath": "buildMultiTargeting\\Domains.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Domains.props",
+      "PackagePath": "buildTransitive\\Domains.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

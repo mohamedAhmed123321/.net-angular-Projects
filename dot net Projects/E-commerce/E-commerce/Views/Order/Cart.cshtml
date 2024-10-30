@@ -1,0 +1,244 @@
+﻿@model ShoppingCartModel
+
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>cart</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">cart</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+<!--section start-->
+<section class="cart-section section-b-space" style="margin-bottom:50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table cart-table table-responsive-xs">
+                    <thead>
+                        @if (Model != null)
+                        {
+                            @if (Model.lstItems.Count != 0)
+                            {
+                                <tr class="table-head">
+                                    <th scope="col">image</th>
+                                    <th scope="col">product name</th>
+                                    <th scope="col">price</th>
+                                    <th scope="col">quantity</th>
+                                    <th scope="col">action</th>
+                                    <th scope="col">total</th>
+                                </tr>
+                            }
+                            else
+                            {
+                                <tr>
+                                    <th >your cart is empty</th>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <th>your cart is empty</th>
+                            </tr>
+                        }
+                    </thead>
+                    <tbody>
+                        @if ( Model!=null)
+                        {
+                            @if (Model.lstItems.Count != 0)
+                            {
+                                @foreach (var item in Model.lstItems)
+                                {
+                                    <tr id="@item.ItemId">
+                                        <td>
+                                            <a href="#"><img src="~/Uploads/Item/@item.ImageName" alt=""></a>
+                                        </td>
+                                        <td>
+                                            <a href="#">@item.ItemName</a>
+                                            <div class="mobile-cart-content row">
+                                                <div class="col-xs-3">
+                                                    <div class="qty-box">
+                                                        <div class="input-group">
+                                                            <input type="text" name="quantity" class="form-control input-number qty"
+                                                                   value="1">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <h2 class="td-color">$63.00</h2>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <h2 class="td-color">
+                                                        <a href="#" class="icon"><i class="ti-close"></i></a>
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h2>$@item.Price</h2>
+                                        </td>
+                                        <td>
+                                            <div class="qty-box">
+                                                <div class="input-group">
+                                                    <input type="number" name="quantity" onchange="ChangeQty(this)"
+                                                           class="form-control input-number qty"
+                                                           data-id="@item.ItemId" data-price="@item.Price"
+                                                           value="@item.Qty">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><a style="cursor:pointer" onclick="RemoveCart(@item.ItemId)" class="icon"><i class="ti-close"></i></a></td>
+                                        <td>
+                                            <h2 data-id="@item.ItemId" class="td-color totalPrice">@item.Total</h2>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                               <tr>your cart is empty</tr>
+                            }
+                        }
+                    </tbody>
+
+                </table>
+                <table class="table cart-table table-responsive-md">
+                    <tfoot>
+                        @if (Model != null)
+                        {
+                            <tr>
+                                <td>total price :</td>
+                                <td>
+                                    <h2 id="OverAllTotal">$@Model.Total</h2>
+                                </td>
+                            </tr>
+                        }
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="row cart-buttons">
+            <div class="col-6"><a href="/Item/ItemList" class="btn btn-solid">continue shopping</a></div>
+            <div class="col-6">
+                @if (Model != null)
+                {
+
+                    @if (Model.Total > 0)
+                    {
+                        <a href="/Order/CheckOut" class="btn btn-solid">check out</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!--section end-->
+@section Scripts
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        function ChangeQty(input) {
+            let quantity = parseInt(input.value);
+            if (quantity < 1) {
+                input.value = 1; // Set the minimum value to 1
+                quantity = 1;
+            }
+
+            // Get the price from the data attribute
+            const price = parseFloat(input.getAttribute('data-price'));
+
+            // Calculate the new total
+            const total = quantity * price;
+
+            // Find the corresponding total price element
+            const totalPriceElement = document.querySelector(`.totalPrice[data-id="${input.getAttribute('data-id')}"]`);
+
+            // Update the total price
+            totalPriceElement.textContent = `${total.toFixed(2)}`;
+
+            let totalCout=0
+            document.querySelectorAll('.totalPrice').forEach(function (el) {
+                totalCout += parseFloat(el.textContent);
+            })
+            document.querySelector('#OverAllTotal').textContent = `$${totalCout}`;
+           
+
+            var requestData = {
+                itemId: input.getAttribute("data-id"),
+                qty: quantity,
+            };
+
+            $.ajax({
+                url: 'https://localhost:7115/api/ApiCart/UpdateCart/',
+                method: 'Post',
+                contentType: 'application/json',
+                data: JSON.stringify(requestData),
+                dataType: 'json',
+                success: function (data) {
+
+                },
+                error: function () {
+                    // Handle error
+                    console.log("error")
+                }
+            });
+        }
+        function RemoveCart(itemId) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "Remove",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes',
+                
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: 'https://localhost:7115/api/ApiCart/RemoveFromCart',
+                        method: 'Post',
+                        contentType: 'application/json',
+                        data: JSON.stringify(itemId),
+                        dataType: 'json',
+                        success: function (data) {
+                            document.getElementById(itemId).remove();
+                            let totalCout = 0
+                            document.querySelectorAll('.totalPrice').forEach(function (el) {
+                                totalCout += parseFloat(el.textContent);
+                            })
+                            document.querySelector('#OverAllTotal').textContent = `$${totalCout}`;
+                            Swal.fire(
+                                'Success',
+                                'Removed Successfully',
+                                'success'
+                            );
+                        },
+                        error: function () {
+                            Swal.fire(
+                                'Error!',
+                                'There is an error .',
+                                'error'
+                            );
+                        }
+                    });
+                }
+            });
+    }
+            </script>
+
+}

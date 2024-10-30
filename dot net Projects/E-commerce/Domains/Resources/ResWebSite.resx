@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblActions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="lblAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="lblAddDegree" xml:space="preserve">
+    <value>Add Degree</value>
+  </data>
+  <data name="lblAddExperience" xml:space="preserve">
+    <value>Add Experience</value>
+  </data>
+  <data name="lblAddLuanguge" xml:space="preserve">
+    <value>Add Luanguge</value>
+  </data>
+  <data name="lblAddSkill" xml:space="preserve">
+    <value>Add Skill</value>
+  </data>
+  <data name="lblArabic" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="lblArDescription" xml:space="preserve">
+    <value>Arabic Description</value>
+  </data>
+  <data name="lblAricleData" xml:space="preserve">
+    <value>Article Data</value>
+  </data>
+  <data name="lblArRequirment" xml:space="preserve">
+    <value>Arabic Requirment</value>
+  </data>
+  <data name="lblArShortDescription" xml:space="preserve">
+    <value>Arabic Short description</value>
+  </data>
+  <data name="lblArSkill" xml:space="preserve">
+    <value>Arabic Skill</value>
+  </data>
+  <data name="lblArticle" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="lblArTitle" xml:space="preserve">
+    <value>Arabic Title</value>
+  </data>
+  <data name="lblArWebsiteDescription" xml:space="preserve">
+    <value>Arabic Website Description</value>
+  </data>
+  <data name="lblArWebsiteName" xml:space="preserve">
+    <value>Arabic Website Name</value>
+  </data>
+  <data name="lblCampanyName" xml:space="preserve">
+    <value>Campany Name</value>
+  </data>
+  <data name="lblCandidate" xml:space="preserve">
+    <value>Candidate</value>
+  </data>
+  <data name="lblCategory" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="lblCategoryName" xml:space="preserve">
+    <value>Category Name</value>
+  </data>
+  <data name="lblContent" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="lblCountry" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="lblCountryCode" xml:space="preserve">
+    <value>Country Code</value>
+  </data>
+  <data name="lblData" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="lblDefualt" xml:space="preserve">
+    <value>defualt</value>
+  </data>
+  <data name="lblDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="lblDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblDirection" xml:space="preserve">
+    <value>ltr</value>
+  </data>
+  <data name="lblEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="lblEditCandidate" xml:space="preserve">
+    <value>Edit Candidate</value>
+  </data>
+  <data name="lblEditCategory" xml:space="preserve">
+    <value>EditCategory</value>
+  </data>
+  <data name="lblEditCountryCode" xml:space="preserve">
+    <value>Edit CountryCode</value>
+  </data>
+  <data name="lblEditEducation" xml:space="preserve">
+    <value>Edit Education</value>
+  </data>
+  <data name="lblEditEmployer" xml:space="preserve">
+    <value>Edit Employer</value>
+  </data>
+  <data name="lblEditExperience" xml:space="preserve">
+    <value>Edit Experience</value>
+  </data>
+  <data name="lblEditJob" xml:space="preserve">
+    <value>Edit Job</value>
+  </data>
+  <data name="lblEditLuanguge" xml:space="preserve">
+    <value>Edit Luanguge</value>
+  </data>
+  <data name="lblEditSkill" xml:space="preserve">
+    <value>Edit Skill</value>
+  </data>
+  <data name="lblEducation" xml:space="preserve">
+    <value>Education</value>
+  </data>
+  <data name="lblEducationName" xml:space="preserve">
+    <value>Education Name</value>
+  </data>
+  <data name="lblEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="lblEmployer" xml:space="preserve">
+    <value>Employer</value>
+  </data>
+  <data name="lblEmployerName" xml:space="preserve">
+    <value>Employer Name</value>
+  </data>
+  <data name="lblEndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="lblEnDescription" xml:space="preserve">
+    <value>English Description</value>
+  </data>
+  <data name="lblEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="lblEnRequirment" xml:space="preserve">
+    <value>English Requirment</value>
+  </data>
+  <data name="lblEnShortDescription" xml:space="preserve">
+    <value>English Short description</value>
+  </data>
+  <data name="lblEnSkill" xml:space="preserve">
+    <value>English Skill</value>
+  </data>
+  <data name="lblEnTitle" xml:space="preserve">
+    <value>English Title</value>
+  </data>
+  <data name="lblEnWebsiteDescription" xml:space="preserve">
+    <value>English Website Description</value>
+  </data>
+  <data name="lblEnWebsiteName" xml:space="preserve">
+    <value>English Website Name</value>
+  </data>
+  <data name="lblExperience" xml:space="preserve">
+    <value>Experience</value>
+  </data>
+  <data name="lblExpirationDate" xml:space="preserve">
+    <value>Expiration Date</value>
+  </data>
+  <data name="lblFirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="lblGender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="lblHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="lblId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="lblImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="lblItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="lblItemCategory" xml:space="preserve">
+    <value>Item Category</value>
+  </data>
+  <data name="lblItemData" xml:space="preserve">
+    <value>ItemData</value>
+  </data>
+  <data name="lblItemType" xml:space="preserve">
+    <value>Item Type</value>
+  </data>
+  <data name="lblJob" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="lblJobName" xml:space="preserve">
+    <value>Job Name</value>
+  </data>
+  <data name="lblJobRequest" xml:space="preserve">
+    <value>Job Request</value>
+  </data>
+  <data name="lblLastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="lblLogo" xml:space="preserve">
+    <value>logo</value>
+  </data>
+  <data name="lblLuanguge" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="lblLuangugeName" xml:space="preserve">
+    <value>Luanguge Name</value>
+  </data>
+  <data name="lblMetaTags" xml:space="preserve">
+    <value>MetaTags</value>
+  </data>
+  <data name="lblName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lblNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="lblNews" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="lblNewsData" xml:space="preserve">
+    <value>News Data</value>
+  </data>
+  <data name="lblOrder" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="lblOs" xml:space="preserve">
+    <value>Os</value>
+  </data>
+  <data name="lblPage" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="lblPageData" xml:space="preserve">
+    <value>Page Data</value>
+  </data>
+  <data name="lblParentCategory" xml:space="preserve">
+    <value>Parent Category</value>
+  </data>
+  <data name="lblPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="lblPhone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="lblPhotAlbum" xml:space="preserve">
+    <value>photo Album</value>
+  </data>
+  <data name="lblPhoto" xml:space="preserve">
+    <value>photo</value>
+  </data>
+  <data name="lblPrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="lblPurchasePrice" xml:space="preserve">
+    <value>Purchase Price</value>
+  </data>
+  <data name="lblSalesPrice" xml:space="preserve">
+    <value>Sales Price</value>
+  </data>
+  <data name="lblSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="lblService" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="lblServiceData" xml:space="preserve">
+    <value>Service Data</value>
+  </data>
+  <data name="lblServiceName" xml:space="preserve">
+    <value>Service Name</value>
+  </data>
+  <data name="lblServiceRequest" xml:space="preserve">
+    <value>Service Request</value>
+  </data>
+  <data name="lblSetting" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="lblSkill" xml:space="preserve">
+    <value>Skill</value>
+  </data>
+  <data name="lblSkillName" xml:space="preserve">
+    <value>Skill Name</value>
+  </data>
+  <data name="lblStartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="lblTitle" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="lblUser" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="lblUserGroup" xml:space="preserve">
+    <value>UserGroup</value>
+  </data>
+  <data name="lblUserName" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="lblUsers" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="lblWeight" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="lblWelcomeAdmin" xml:space="preserve">
+    <value>welcome to admin panel</value>
+  </data>
+  <data name="lblYearOfExperience" xml:space="preserve">
+    <value>Year Of Experience</value>
+  </data>
+  <data name="lblSupplierName" xml:space="preserve">
+    <value>Supplier Name</value>
+  </data>
+  <data name="lblAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="lblFacebookLink" xml:space="preserve">
+    <value>Facebook Link</value>
+  </data>
+  <data name="lblInstgramLink" xml:space="preserve">
+    <value>Instgram Link</value>
+  </data>
+  <data name="lblLastPanner" xml:space="preserve">
+    <value>Last Panner</value>
+  </data>
+  <data name="lblMetaDescriptiuon" xml:space="preserve">
+    <value>MetaDescriptiuon</value>
+  </data>
+  <data name="lblMiddlePanner" xml:space="preserve">
+    <value>MiddlePanner</value>
+  </data>
+  <data name="lblShowInHomePage" xml:space="preserve">
+    <value>Show in Home page</value>
+  </data>
+  <data name="lblTwitterLink" xml:space="preserve">
+    <value>Twitter Link</value>
+  </data>
+  <data name="lblWebsiteDescription" xml:space="preserve">
+    <value>Website Description</value>
+  </data>
+  <data name="lblWebsiteName" xml:space="preserve">
+    <value>Website Name</value>
+  </data>
+  <data name="lblYoutubeLink" xml:space="preserve">
+    <value>Youtube Link</value>
+  </data>
+  <data name="lblRamSize" xml:space="preserve">
+    <value>Ram Size</value>
+  </data>
+  <data name="lblProcessor" xml:space="preserve">
+    <value>Processor</value>
+  </data>
+  <data name="lblGpu" xml:space="preserve">
+    <value>Gpu</value>
+  </data>
+  <data name="lblHardDisk" xml:space="preserve">
+    <value>Hard Disk</value>
+  </data>
+  <data name="lblScreenReslution" xml:space="preserve">
+    <value>Screen Reslution</value>
+  </data>
+  <data name="lblScreenSize" xml:space="preserve">
+    <value>Screen Size</value>
+  </data>
+  <data name="lblOsId" xml:space="preserve">
+    <value>Os Id</value>
+  </data>
+  <data name="lblSlider" xml:space="preserve">
+    <value>Slider</value>
+  </data>
+  <data name="lblSupplier" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+</root>

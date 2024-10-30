@@ -1,0 +1,150 @@
+﻿@model TbCourseType
+<div class="content-wrapper">
+    <div class="page-header">
+    </div>
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form class="forms-sample" method="post" enctype="multipart/form-data"
+                          id="MyForm" asp-controller="CourseType" asp-action="Edit" role="form">
+
+                        <input type="hidden" asp-for="CourseTypeId" />
+                        <input type="hidden" asp-for="CreatedBy" />
+                        <input type="hidden" asp-for="CurrentState" />
+                        <input type="hidden" asp-for="CreatedDate" />
+                        <input type="hidden" asp-for="UpdatedBy" />
+                        <input type="hidden" asp-for="UpdatedDate" />
+
+
+                    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;padding:0 25px;" >
+
+                            <div class="form-group col-md-5" style="display:grid;grid-template-columns:30% 85%;gap:5%;align-items:center;">
+                                <label for="exampleInputUsername1" class="arrow right">Name</label>
+                                <input asp-for="CourseTypeName" type="text" class="form-control" placeholder="Name">
+                                <span style="color:crimson" asp-validation-for="CourseTypeName"></span>
+                            </div>
+
+
+                    </div>
+
+                        <button  type="submit" formmethod="post" class="btn btn-gradient-primary me-2 col-md-2 ">Save</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section styls {
+    <style>
+        .arrow {
+            position: relative;
+            line-height:1.5!important;
+        } 
+
+            .arrow.right::before {
+                content: '';
+                position: absolute;
+                height: 0;
+                width: 0;
+                border-color: transparent transparent transparent #eee;
+                border-width: 10px;
+                border-style: solid;
+                right: -23px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+    </style>
+}
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    @if (!string.IsNullOrEmpty(ViewBag.Failed))
+    {
+        <script>
+            // Display a SweetAlert popup
+            Swal.fire({
+                icon: 'error',
+                title: '@ViewBag.Failed',
+                showConfirmButton: true // Show a confirm button
+            }).then((result) => {
+            @{
+                ViewBag.Failed = ""; // Assigning ViewBag.Success in Razor code
+            }
+                                    });
+        </script>
+    }
+    <script>
+        function handleImageChange(event) {
+            const file = event.target.files[0];
+
+            // Call the file extension validation function
+            if (!validateFileExtension(file)) {
+                document.getElementById("imageUpload").value = "";
+                return; // Return if the file extension is invalid
+            }
+            if (!validateFileSize(file)) {
+                document.getElementById("imageUpload").value = "";
+                return; // Return if the file size exceeds the limit
+            }
+            // Call the UploadDefaultImg function
+            UploadDefaultImg(file);
+        }
+        function validateFileExtension(file) {
+            var fileName = file.name;
+            var fileExtension = fileName.split('.').pop().toLowerCase();
+            var allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+
+            if (allowedExtensions.indexOf(fileExtension) === -1) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Extension',
+                    text: 'Only JPG, JPEG, PNG, and GIF files are allowed.',
+                    confirmButtonText: 'OK'
+                });
+                return false;
+            }
+            return true;
+        }
+        function validateFileSize(file) {
+            const maxSize = 10 * 1024 * 1024; // 10 MB limit
+            if (file.size > maxSize) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Size',
+                    text: 'Image size exceeds the maximum allowed size (10 MB).',
+                    confirmButtonText: 'OK'
+                });
+                return false;
+            }
+            return true;
+        }
+        function UploadDefaultImg(file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const imageData = {
+                    name: file.name,
+                    base64: reader.result.slice(reader.result.indexOf('base64,') + 7)
+                };
+
+                const imagePreviewHTML = getImagePreviewHTML(reader.result);
+
+                // Pass the file data and image preview HTML to the caller
+                handleImageUpload(imageData, imagePreviewHTML);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function getImagePreviewHTML(imageDataURL) {
+            return `<img class="thumbnail" src="${imageDataURL}" style="width: 95%; height: 300px; border-radius: 5px; border: 1px solid #d9d9d9; padding: 1px;" />`;
+        }
+
+        function handleImageUpload(imageData, imagePreviewHTML) {
+            // Example usage: Update DOM elements with image data and preview HTML
+            document.getElementById("tbImgSrc").innerHTML = imagePreviewHTML;
+            // Additional logic for handling the image data as needed
+        }
+    </script>
+}

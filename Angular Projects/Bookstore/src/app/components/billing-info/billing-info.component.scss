@@ -1,0 +1,18 @@
+input.ng-invalid.ng-touched{
+  border: red 1px solid;
+
+}
+.spanError{
+  color: red;
+}
+
+button:disabled {
+  cursor: not-allowed; /* Changes cursor to indicate non-clickable */
+  opacity: 0.6; /* Reduces opacity */
+}
+button:disabled #paypal-button-container{
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
+}
+

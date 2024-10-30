@@ -1,0 +1,137 @@
+﻿ <div id="loader-background" style="display:none">
+        <div class="mo">Loading...</div>
+    </div>
+<!-- Paragraph-->
+<div class="title1 section-t-space">
+    <h4>special offer</h4>
+    <h2 class="title-inner1">today's deal</h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="product-para">
+                <p class="text-center">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Paragraph end -->
+<!-- Product section -->
+<section class="pt-0 section-b-space ratio_asos">
+    <div class="container">
+        <div id="ItemArea" class="row game-product grid-products">
+
+
+
+    
+        </div>
+
+        <div id="ItemPagination">
+            <ul>
+            </ul>
+        </div>
+
+    </div>
+</section>
+<!-- Product section end -->
+<!-- Parallax banner -->
+<section class="p-0">
+    <div class="full-banner parallax text-center p-right">
+        <img src="~/Website/assets/images/parallax/28.jpg" alt="" class="bg-img blur-up lazyload">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="banner-contain">
+                        <h2>sale</h2>
+                        <h3>fashion trends</h3>
+                        <h4>special offer</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Parallax banner end -->
+<!-- product section start -->
+<section class="tools_product bg-title section-b-space" style="margin-bottom:50px !important">
+    <div class="container">
+        <div class="row multiple-slider">
+            <div class="col-xl-4 col-lg-4 col-md-12">
+                <div class="theme-card">
+                    <h5 class="title-border">Under $20 | Free delivery</h5>
+                    <div class="offer-slider slide-1">
+                        <div id="delivery-1">
+       
+  
+                        </div>
+                        <div id="delivery-2">
+         
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-8 col-lg-8 col-md-12">
+                <div class="theme-tab">
+                    <div class="bg-title-part">
+                        <h5 class="title-border">RECOMMENDATIONS FOR YOU</h5>
+                        <ul class="tabs tab-title">
+                            <li class="current">
+                                <a href="tab-4">New Products</a>
+                            </li>
+                            <li class="">
+                                <a href="tab-5">Featured Products</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content-cls ratio_asos">
+                        <div id="tab-4" class="tab-content active default ">
+                            <div id="Recommended-1" class="product-4 game-product product-m no-arrow RecommendedItems">
+           
+                            </div>
+                        </div>
+                        <div id="tab-5" class="tab-content">
+                            <div id="Recommended-2" class="product-4 game-product product-m no-arrow RecommendedItems">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-tools">
+                    <img src="~/Website/assets/images/offer-banner1.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- product section end -->
+@section Scripts {
+    <script src="~/modules/item/items.js"></script>
+    <script src="~/modules/item/freedilevered.js"></script>
+    <script src="~/modules/item/recommendeditem.js"></script>
+    <script> 
+        window.onload=function(){
+            var loader = document.getElementById('loader-background');
+            loader.style.display = 'block';
+            ClsItem.getData(ClsItem.currentPage);
+
+            for (i = 1; i <= 2; i++) {
+                ClsFree.getData();
+
+            }
+
+
+            for (i = 1; i <= 2; i++) {
+                Clsrecommend.getData();
+
+            }
+        }
+    </script>
+}
+@section Styles {
+    <link href="~/modules/item/site.css" rel="stylesheet" />
+}

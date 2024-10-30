@@ -1,0 +1,102 @@
+﻿@*@model List<PermessionModel>
+<div class="container-fluid page-body-wrapper">
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title"> Data table </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Data table</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Data table</h4>
+                    <form class="forms-sample" method="post" enctype="multipart/form-data"
+                          asp-controller="Permession" asp-action="Save" role="form">
+                        <div class="row">
+                            <div class="col-12">
+
+
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Role Name</label>
+                                    <input name="RoleName" type="text" class="form-control" id="exampleInputUsername1" placeholder="Role Name">
+                                </div>
+
+
+                                <table id="order-listing" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>@Admin.lblViewName</th>
+                                            <th>@Admin.lblShow</th>
+                                            <th>@Admin.lblAdd</th>
+                                            <th>@Admin.lblEdit</th>
+                                            <th>@Admin.lblDelete</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach(var permession in Model)
+                                        {
+                                            <tr>
+
+                                                <td> <input asp-for="@permession.FormName" type="text" classFormName="form-control"></td>
+                                                <td>
+                                                    <div  class="form-check form-check-flat form-check-primary">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input"> <i class="input-helper"></i>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-check form-check-flat form-check-primary">
+                                                        <label  class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input">  <i class="input-helper"></i>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-check form-check-flat form-check-primary">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input"> <i class="input-helper"></i>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-check form-check-flat form-check-primary">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input"><i class="input-helper"></i>
+                                                        </label>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                            
+                                        }
+                              
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+
+    </div>
+    <!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+@section  styls{
+    <link rel="stylesheet" href="~/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+}
+@section Scripts{
+    <script src="~/assets/js/data-table.js"></script>
+    <script src="~/assets/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+}*@

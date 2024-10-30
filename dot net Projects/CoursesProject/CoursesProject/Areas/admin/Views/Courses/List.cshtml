@@ -1,0 +1,78 @@
+﻿@model List<Details>
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Data table </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data table</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Data table</h4>
+            <div class="row">
+                <div class="col-12">
+                    <div id="order-listing_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                     
+                            <div class="row">
+                            <div class="col-sm-12">
+                                <table id="order-listing" class="table dataTable no-footer" aria-describedby="order-listing_info">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Order #: activate to sort column descending" style="width: 89.5781px;">@Admin.lblCourseImage</th>
+                                            <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 143.656px;">@Admin.lblCourseName</th>
+                                            <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 106.094px;">@Admin.lblInstructorName</th>
+                                            <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Ship to: activate to sort column ascending" style="width: 81.9688px;">@Admin.lblPrice</th>
+                                            <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 91.1719px;">@Admin.lblActions</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach(var Details in Model)
+                                        {
+                                            <tr class="odd">
+                                                <td class="sorting_1"><img src="~/Uploads/CoursesImage/@Details.ImageName" /></td>
+                                                <td>@Details.CourseName</td>
+                                                <td>@Details.InstructorName</td>
+                                                @if (@Details.Price == 0)
+                                                {
+                                                    <td>@Admin.lblFree</td>
+
+                                                }
+                                                else
+                                                {
+                                                    <td>@Details.Price</td>
+                                                }
+
+
+                                                <td class="col-md-4" style="margin:0px;padding:0px;">
+                                                    <a asp-controller="Courses" asp-action="Edit" asp-route-id="@Details.CourseId" class="btn btn-info btn-fw">@Admin.lblEdit</a>
+
+                                                    <a asp-controller="Courses" asp-action="Delete" asp-route-id="@Details.CourseId" class="btn btn-danger btn-fw">@Admin.lblDelete</a>
+                                                </td>
+                                            </tr>
+                                        }
+
+                                        <a asp-controller="Courses" asp-action="Edit" class="btn btn-danger btn-fw">@Admin.lblNew</a>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+              
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section styls
+{
+    <link rel="stylesheet" href="~/Admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+}
+@section Scripts
+    {
+
+    <script src="~/Admin/assets/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="~/Admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="~/Admin/assets/js/data-table.js"></script>
+}

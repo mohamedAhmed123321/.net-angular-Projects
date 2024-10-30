@@ -1,0 +1,161 @@
+﻿@model ShoppingCart
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>Check-out</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/Home/Index/0">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Check-out</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+<!-- section start -->
+<section class="section-b-space">
+    <div class="container">
+        <div class="checkout-page">
+            <div class="checkout-form">
+                <form>
+                    <div class="row">
+                        <div style="margin:auto" class="col-lg-10 col-sm-12 col-xs-12">
+                            <div class="checkout-details">
+                                <div class="order-box">
+                                    <div class="title-box">
+                                        <div>Product <span>Total</span></div>
+                                    </div>
+                                    <ul class="qty">
+                                        @foreach (var item in Model.lstItems)
+                                        {
+
+                                            <li>@item.CourseName × @item.Qty <span>$@item.Total</span></li>
+                                        }
+                                    </ul>
+                                    <ul class="total">
+                                        <li>Total <span class="count">$@Model.Total</span></li>
+                                    </ul>
+                                </div>
+                                <div class="payment-box">
+                                    <div class="upper-box">
+                                        <div class="payment-options">
+                                            <ul>
+                                                <li>
+                                                    <div style="width:100%" id="paypal-button-container" class="radio-option paypal">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section end -->
+@section Scripts {
+    <script src="https://www.paypal.com/sdk/js?client-id=AXugXqnY8yA2tTGSJUpL_7cbmdsaWefzGpkWXoAKBfwvWaea3tJgQFunRycPDCYj1v054K1cAf3SPLOY&currency=USD"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        paypal.Buttons({
+            // Create order by calling your server and returning a Promise
+            createOrder: function (data, actions) {
+                return new Promise(function (resolve, reject) {
+                    $.ajax({
+                        url: '/PayPal/CreateOrder',
+                        method: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify(@Model.Total),
+                        success: function (response) {
+                            let orderId = response.id;
+                            resolve(orderId);
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("Error creating order:", error);
+                            alert('Error creating order. Please try again.');
+                            reject(error); // Reject the Promise in case of error
+                        }
+                    });
+                });
+            },
+
+            // Automatically triggered after PayPal order approval
+            onApprove: function (data, actions) {
+                // Capture the payment using the order ID returned from createOrder
+                return $.ajax({
+                    url: '/PayPal/CompleteOrder',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data.orderID), // Use PayPal order ID to capture payment
+                    success: function (details) {
+                        if (details !== "success") {
+                            Swal.fire(
+                                'Error!',
+                                'Payment failed',
+                                'error'
+                            );
+
+                            return;
+                        }
+                        else{
+                         Swal.fire({
+                        title: 'Success',
+                        text: 'Payment made Successfully',
+                        icon: 'success',
+                         allowOutsideClick: false
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Action to perform when "OK" is clicked
+                              window.location.href = '/Order/OrderSuccess';
+                        }
+                    });
+
+
+                        }
+
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error capturing payment:", error);
+                    }
+
+                });
+            },
+            // oncancel: function (data) 
+            // {
+            //     Swal.fire(
+            //         'Error!',
+            //         'order Canceled',
+            //         'error'
+            //     );
+            //    return $.ajax({
+            //         url: '/PayPal?handler=CancelOrder',
+            //         method: 'POST',
+            //         contentType: 'application/json',
+            //         data: JSON.stringify(data.orderID),,
+            //         dataType: 'json',
+            //     });
+            // },
+            onError: function (err) {
+                Swal.fire(
+                    'Error!',
+                    'failed to create the order',
+                    'error'
+                );
+            }
+        }).render('#paypal-button-container'); // Display PayPal button
+    </script>
+
+}

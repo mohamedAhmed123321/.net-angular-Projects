@@ -1,0 +1,128 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "E-Commerce": {
+      "projectType": "application",
+      "root": "./",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/e-commerce",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/assets/css/fontawesome.css",
+              "src/assets/css/slick.css",
+              "src/assets/css/slick-theme.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/themify-icons.css",
+              "src/assets/css/flag-icon.css",
+              "src/assets/css/icofont.css",
+              "src/assets/css/prism.css",
+              "src/assets/css/chartist.css",
+              "src/assets/css/color1.css",
+              "src/assets/css/admin.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/parallax-effect.js",
+              "src/assets/js/menu.js",
+              "src/assets/js/lazysizes.min.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/bootstrap-notify.min.js",
+              "src/assets/js/sidebar-menu.js",
+              "src/assets/js/chart/chartist/chartist.js",
+              "src/assets/js/chart/chartjs/chart.min.js",
+              "src/assets/js/prism/prism.min.js",
+              "src/assets/js/clipboard/clipboard.min.js",
+              "src/assets/js/custom-card/custom-card.js",
+              "src/assets/js/counter/jquery.waypoints.min.js",
+              "src/assets/js/counter/jquery.counterup.min.js",
+              "src/assets/js/counter/counter-custom.js",
+              "src/assets/js/chart/peity-chart/peity.jquery.js",
+              "src/assets/js/chart/sparkline/sparkline.js",
+              "src/assets/js/admin-customizer.js",
+              "src/assets/js/chat-menu.js",
+              "src/assets/js/height-equal.js",
+              "src/assets/js/footer-reveal.min.js",
+              "src/assets/js/script.js",
+              "src/assets/js/dashboard/default.js",
+               "src/assets/js/admin-script.js",
+               "src/assets/js/datatables/jquery.dataTables.min.js",
+               "src/assets/js/datatables/custom-basic.js"
+
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "E-Commerce:build:production"
+            },
+            "development": {
+              "buildTarget": "E-Commerce:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/assets/css/slick.css",
+              "src/assets/css/slick-theme.css"
+            ],
+            "scripts": [
+              "src/assets/js/slick.min.js"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "d1ed9f63-7d0b-475d-a207-916e498d52a4"
+  }
+}

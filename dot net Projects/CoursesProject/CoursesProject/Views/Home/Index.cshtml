@@ -1,0 +1,87 @@
+﻿@model List<Details>
+<!-- Home slider -->
+<!-- Tab product -->
+<div class="title1 section-t-space">
+
+    <h2 class="title-inner1">@general.lblBrowseOurBestCourses</h2>
+</div>
+<!-- parallax section start -->
+<section style="margin-bottom:15px;margin-left: auto;margin-right: auto;padding:6px 0;background-color:#eee;background-image:none !important" class="full-banner parallax small-slider tools-parallax-product">
+    <div class="container">
+        <div class="row">
+
+            <div style="margin:0 !important" class="col-lg-12 col-12 tools-grey ratio_square">
+                <div class="tools-product-4 product-m">
+                    @foreach (var type in ViewBag.CourseType)
+                    {
+                        <div style="  border-radius:100px !important;" class="product-box product-wrap">
+                            <div class="product-info">
+
+                                <a asp-controller="Home" asp-action="Index" asp-route-id="@type.CourseTypeId">
+                                    <h6>@type.CourseTypeName</h6>
+                                </a>
+
+                            </div>
+                        </div>
+                    }
+   
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- parallax section end -->
+<section class="section-b-space p-t-0 ratio_asos">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="theme-tab">
+                    <div class="tab-content-cls">
+                        <div id="tab-4" class="tab-content active default">
+                            <div id="productboxContainer" class="no-slider row">
+                                    <!-- start Article -->
+                                    <div class="Article" id="Articles">
+                                        <div class="container">
+                                            <div class="images">
+
+                                
+                               @foreach (var Colum in Model)
+                                            {
+                                                @if (!string.IsNullOrEmpty(Colum.Description))
+                                                {
+                                                    <div>
+                                                        <img src="~/Uploads/CoursesImage/@Colum.ImageName" alt="">
+                                                        <h4>@Colum.CourseName</h4>
+                                                        <p class="dynamic-text"  title="@Colum.Description">@Colum.Description</p>
+                                                        <a asp-controller="Home" asp-action="CourseDetails" asp-route-id="@Colum.CourseId">read more <i > &rarr;</i> </a>
+                                                    </div>
+                                                }
+
+                                            }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end Article -->
+                         
+
+
+
+                            </div>
+
+                        </div>
+
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Tab product end -->
+@section styls {
+    <link href="~/custom/home.css" rel="stylesheet" />
+}
+@section scripts{
+@*     <script src="~/custom/slider/parallax-effect.js"></script> *@
+}

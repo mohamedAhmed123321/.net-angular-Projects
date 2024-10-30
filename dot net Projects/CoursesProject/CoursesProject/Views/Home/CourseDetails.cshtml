@@ -1,0 +1,174 @@
+﻿@model Details
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>@general.lblproduct</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/Home/Index">@general.lblHome</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">@general.lblproduct</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+<!-- section start -->
+<section>
+    <div class="collection-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="product-slick">
+                        <div>
+                            <a href="@Model.Video">
+                                <img src="~/Uploads/CoursesImage/@Model.ImageName" alt=""
+                                     class="img-fluid blur-up lazyload image_zoom_cls-0">
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-6 rtl-text">
+                    <div class="product-right">
+                        <h2 class="mb-0">@Model.CourseName</h2>
+                        <h5 class="mb-2">by <a href="#">@Model.InstructorName</a></h5>
+                        @if (Model.Price == 0)
+                        {
+                            <h3>@general.lblFree</h3>
+                        }
+                        else
+                        {
+                            <h3>@Model.Price</h3>
+                        }
+
+
+
+                        <div class="product-buttons">
+                            <a asp-controller="Order" asp-action="AddToCart" asp-route-CourseId="@Model.CourseId"
+                               class="btn btn-solid">@general.lblAddTocart</a>
+                            @if (Model.Price == 0)
+                            {
+                                <a asp-controller="RoleInCourse" asp-action="Role" asp-route-id="@Model.CourseId" class="btn btn-solid">@general.lblROLLNOW</a>
+                            }
+                            else
+                            {
+                                <a href="/Order/Payment" class="btn btn-solid">@general.lblbuyNow</a>
+
+                            }
+
+                        </div>
+
+
+                        <div class="border-product">
+                            <h6 class="product-title">@general.lblproductdetails</h6>
+                            <h3>
+                                @Model.Description
+                            </h3>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section ends -->
+<!-- product-tab starts -->
+<section class="tab-product m-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <ul class="nav nav-tabs nav-material" id="top-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="top-home-tab" data-toggle="tab"
+                           href="#top-home" role="tab" aria-selected="true">@general.lblDescription</a>
+                        <div class="material-border"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-top-tab" data-toggle="tab"
+                           href="#top-profile" role="tab" aria-selected="false">@general.lblDetails</a>
+                        <div class="material-border"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-top-tab" data-toggle="tab"
+                           href="#top-contact" role="tab" aria-selected="false">@general.lblVideo</a>
+                        <div class="material-border"></div>
+                    </li>
+
+                </ul>
+                <div class="tab-content nav-material" id="top-tabContent">
+                    <div class="tab-pane fade show active" id="top-home" role="tabpanel"
+                         aria-labelledby="top-home-tab">
+                        <h3>
+                            @Model.Description
+                        </h3>
+                    </div>
+                    <div class="tab-pane fade" id="top-profile" role="tabpanel" aria-labelledby="profile-top-tab">
+                        <h3>
+                            @Model.Description
+                        </h3>
+                        <div class="single-product-tables">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>@general.lblInstructor</td>
+                                        <td>@Model.InstructorName</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@general.lblSkillLevel</td>
+                                        <td>@Model.SkillLevel</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@general.lblLectures</td>
+                                        <td>@Model.Lectures</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>@general.lblTime</td>
+                                        <td>@Model.Time H @Model.Minute M</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <tbody>
+                                    @foreach (var Feature in ViewBag.Features)
+                                    {
+                                        <tr>
+                                            <td>@Feature.FeatureName</td>
+
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="top-contact" role="tabpanel" aria-labelledby="contact-top-tab">
+                        <div class="mt-4 text-center">
+                            <a href="@Model.Video">
+                                <video controls poster="~/Uploads/CoursesImage/@Model.ImageName">
+                                    <source src="@Model.Video" type="video/mp4">
+
+                                </video>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- product-tab ends -->

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "O2apZl7xR/5KyjfWenms3TT1Vo+4mNodV2+vICn8+Q0hgmEiiPytFMmYjQVrfwBUbEOxwylcXVlAXc5dVD2ljg==",
+  "success": true,
+  "projectFilePath": "D:\\programs\\Samples\\MathOperationGame\\MathOperationGame\\MathOperationGame.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ws\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\ws\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\ws\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\ws\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
+  "logs": []
+}

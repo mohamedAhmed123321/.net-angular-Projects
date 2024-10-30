@@ -1,0 +1,30 @@
+1-manage stores
+2-manage items
+3-manage orders
+4-reports
+-----------------------------------------
+store option
+------------------------------------------
+1-add new store
+2-delete store
+3-get all stores
+4-to back press escape
+----------------------------------------
+items option
+---------------------------------------
+1-add new item
+2-delete item
+3-get all items
+4-to back press escape
+--------------------------------------
+orders option
+--------------------------------------
+1-add new order
+2-get all orders
+3-to back press escape
+-------------------------------------
+reports
+-------------------------------------
+1-report 1
+2-report 2
+3-to back press escape
